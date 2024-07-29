@@ -95,6 +95,7 @@ nlobj.MV(2).Max = u_max(2);
 % nlobj.Optimization.CustomEqConFcn = @eq_constraints;
 nlobj.Optimization.CustomIneqConFcn = @leq_constraints_goal;
 nlobj.Optimization.UseSuboptimalSolution = true; % if max number of iterations reached w/out solving, still give suboptimal
+nlobjBest.Optimization.SolverOptions.UseParallel = true; % enable parallelization
 
 % define initial conditions, verify correct construction
 x0 = [0; 0; -1; 14]; %x0 = [0; 0; 0; 14];
